@@ -1,0 +1,108 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #05070d;
+  --foreground: #f1f5f9;
+}
+
+html {
+  scroll-behavior: smooth;
+  color-scheme: dark;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Custom luxury scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #05070d;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1e2942;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #d49e35;
+}
+
+/* Typography and utility styles */
+.text-gold-gradient {
+  background: linear-gradient(135deg, #f5c568 0%, #d49e35 50%, #b8860b 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-silver-gradient {
+  background: linear-gradient(135deg, #ffffff 0%, #e2e8f0 50%, #94a3b8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-blue-gradient {
+  background: linear-gradient(135deg, #38bdf8 0%, #0284c7 50%, #00b4d8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.bg-mesh-pattern {
+  background-image: radial-gradient(rgba(212, 158, 53, 0.06) 1px, transparent 1px),
+    radial-gradient(rgba(0, 180, 216, 0.04) 1px, transparent 1px);
+  background-size: 32px 32px;
+  background-position: 0 0, 16px 16px;
+}
+
+/* Luxury card effect */
+.luxury-card {
+  background: linear-gradient(180deg, rgba(15, 22, 41, 0.75) 0%, rgba(10, 15, 29, 0.85) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(12px);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.luxury-card:hover {
+  border-color: rgba(212, 158, 53, 0.35);
+  box-shadow: 0 15px 35px -10px rgba(0, 0, 0, 0.8), 0 0 20px -5px rgba(212, 158, 53, 0.15);
+  transform: translateY(-2px);
+}
+
+/* Skip link focus */
+.skip-link:focus {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  z-index: 100;
+  padding: 0.75rem 1.5rem;
+  background: #d49e35;
+  color: #05070d;
+  font-weight: 700;
+  border-radius: 0.375rem;
+  outline: none;
+  box-shadow: 0 0 20px rgba(212, 158, 53, 0.6);
+}
